@@ -1,0 +1,12 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+
+app.index:
+    resource: "@AppBundle/Controller/IndexController.php"
+    type: annotation
+
+profesor:
+
+    resource: "@AppBundle/Controller/ProfesorController.php"
+    type: annotation
+    prefix: /profesor

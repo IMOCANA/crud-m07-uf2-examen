@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div>
+        <form method="post" action="{{ action }}" novalidate="novalidate">
+            <div>
+                {{ dump(form.vars.value) }}
+            </div>
+
+            <div>{{ form_errors(form.nombre) }}{{ form_label(form.nombre) }}: {{ form_widget(form.nombre) }}</div>
+            <div>{{ form_errors(form.primerapellido) }}{{ form_label(form.primerapellido) }}: {{ form_widget(form.primerapellido) }}</div>
+            <div>{{ form_errors(form.segundoapellido) }}{{ form_label(form.segundoapellido) }}: {{ form_widget(form.segundoapellido) }}</div>
+            <div>{{ form_errors(form.edad) }}{{ form_label(form.edad) }}: {{ form_widget(form.edad) }}</div>
+            <div>{{ form_errors(form.asignatura) }}{{ form_label(form.asignatura) }}: {{ form_widget(form.asignatura) }}</div>
+            {{ form_rest(form) }}
+            <input type="submit" value="Insert">
+        </form>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <h1>Profesor</h1>
+    <br></br>
+    <h3><a href="{{ path('app_profesor_insert') }}">New Teacher</a></h3>
+    <br></br>
+    <table> <td><b>OPCIONES: </b></td>
+        <td></td>
+        <td></td>
+    </table>
+    <table>
+        {% for profesor in profesor %}
+            <tr>
+                <td>==========</td>
+                <td>==========</td>
+                <td>==========</td>
+            </tr>
+
+            <tr>
+                <td>{{ profesor.id }} </td>
+                <td>{{ profesor.nombre }} </td>
+                <td>{{ profesor.primerapellido }} </td>
+                <td>{{ profesor.segundoapellido }} </td>
+            </tr>
+            <tr>
+                <td>Asignatura:{{ profesor.asignatura }} </td>
+            </tr>
+
+            <tr>
+                <td> Creado:{{ producto.createdAt | date("m/d/Y") }} </td>
+                <td> Modificado:{{ producto.updateAt | date("m/d/Y") }}</td>
+            </tr>
+
+            <tr>
+                <td><b>OPCIONES: </b></td>
+                <td></td>
+                <td><a href="{{ path('app_profesor_update', {'id':profesor.id}) }}">Update</a> ||
+                    <a href="{{ path('app_profesor_remove', {'id':profesor.id}) }}">Remove</a> ||
+                    <a href="{{ path('app_profesor_insert') }}">New Teacher</a>                ||
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
